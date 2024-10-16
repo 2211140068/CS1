@@ -22,4 +22,12 @@ test:
 
 production:
   <<: *default
-  database: storage/production.sqlite3
+  #database: storage/production.sqlite3
+  adapter: postgresql
+  encording: unicode
+  pool: 5
+  #database: db/production.sqlite3
+  database: test_render_cbm5
+  username: test_render_cbm5_user
+  password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
